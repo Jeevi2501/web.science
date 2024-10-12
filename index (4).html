@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Discoveries Timeline</title>
+
+    <!-- Include Font Awesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url("https://assets.onecompiler.app/42uutqmvw/42uutpw3r/background.avif") no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+        
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            animation: fadeIn 2s ease forwards;
+        }
+
+        nav {
+            background-color: rgba(0, 0, 0, 0.7);
+            text-align: center;
+            padding: 10px;
+            animation: fadeIn 2s ease forwards;
+            animation-delay: 1s; /* Delayed appearance */
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #FFD700; /* Change text color on hover */
+            transform: scale(1.1); /* Hover animation */
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #333;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            animation: slideIn 1.5s ease-out forwards;
+            animation-delay: 2s;
+        }
+
+        section h2 {
+            color: #333;
+        }
+
+        ul {
+            line-height: 1.6;
+            position: relative;
+            list-style-type: none;
+        }
+
+        i {
+            margin-right: 10px;
+            color: #444;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            height: auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            opacity: 0;
+            animation: fadeInImage 2s ease forwards;
+        }
+
+        /* Timeline Style */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #FFD700;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        .timeline-item {
+            padding: 10px;
+            position: relative;
+            width: 50%;
+            margin-bottom: 15px;
+            background-color: #fff;
+            border-radius: 6px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-item::before {
+            content: '\f111';
+            font-family: "FontAwesome";
+            font-size: 20px;
+            position: absolute;
+            top: 20px;
+            right: -10px;
+            background-color: #FFD700;
+            color: #fff;
+            border-radius: 50%;
+            padding: 10px;
+        }
+
+        .timeline-item h3 {
+            margin: 0;
+            color: #333;
+        }
+
+        .timeline-item p {
+            color: #555;
+        }
+
+        .timeline-item img {
+            max-width: 50px;
+            display: block;
+            margin: 10px 0;
+        }
+        .fact-widget {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #FFD700;
+            padding: 10px 20px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            border-radius: 6px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            font-size: 18px;
+        }
+        /* Keyframe animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateY(100px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeInImage {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1><i class="fas fa-flask"></i> Timeline of Scientific Discoveries</h1>
+        <img src="https://assets.onecompiler.app/42uutqmvw/42uvc3m5t/timeline%20of%20science.jpg" alt="Science Discoveries"  height="100" width="300">
+    </header>
+
+    <nav>
+        <a href="#ancient"><i class="fas fa-history"></i> Ancient Discoveries</a>
+        <a href="#modern"><i class="fas fa-lightbulb"></i> Modern Discoveries</a>
+        <a href="#recent"><i class="fas fa-rocket"></i> Recent Discoveries</a>
+    </nav>
+    <!-- Fact of the Day Widget -->
+    <div class="fact-widget" id="fact-of-the-day">
+        Loading Fact of the Day...
+    </div>
+    <!-- Ancient Discoveries Section -->
+    <section id="ancient">
+        <h2><i class="fas fa-landmark"></i> Ancient Discoveries</h2>
+        <img src="https://assets.onecompiler.app/42uutqmvw/42uutpw3r/ancientdisc.jpg" alt="Invention of the Wheel" width="100" height="200">
+        
+        <ul class="timeline">
+            <li class="timeline-item">
+                <h3>3500 BC</h3>
+                <p><strong>Wheel</strong> - Invented in Mesopotamia, transforming transportation and engineering.</p>
+                <img src="https://assets.onecompiler.app/42uutqmvw/42uutpw3r/wheeeels.jpg" alt="Ancient Wheel">
+            </li>
+            <li class="timeline-item">
+                <h3>Prehistoric</h3>
+                <p><strong>Fire</strong> - Early humans discovered how to control fire, leading to cooking and warmth.</p>
+                <img src="https://assets.onecompiler.app/42uutqmvw/42uutpw3r/fire.avif" alt="Prehistoric Fire">
+            </li>
+            <li class="timeline-item">
+                <h3>500 BC</h3>
+                <p><strong>Pythagoras' Theorem</strong> - Ancient Greeks discovered fundamental principles in mathematics.</p>
+                <img src="https://assets.onecompiler.app/42uutqmvw/42uutpw3r/pythogoras.jpg" alt="Pythagoras">
+            </li>
+            <li class="timeline-item">
+                <h3>1543</h3>
+                <p><strong>Heliocentric Theory</strong> - Nicolaus Copernicus proposed that the Earth revolves around the Sun.</p>
+                <img src="https://assets.onecompiler.app/42uutqmvw/42uutpw3r/heliocentric.jpg" alt="Copernicus Heliocentric Theory">
+            </li>
+        </ul>
+    </section>
+
+    <!-- Modern Discoveries Section -->
+    <section id="modern">
+        <h2><i class="fas fa-lightbulb"></i> Modern Discoveries (16th to 20th Century)</h2>
+        <img src="https://assets.onecompiler.app/42uutqmvw/42uutpw3r/modern.jpg" alt="Penicillin Discovery" width="100" height="100">
+        
+        <ul class="timeline">
+            <li class="timeline-item">
+                <h3>1687</h3>
+                <p><strong>Gravity</strong> - Isaac Newton formulated the law of universal gravitation.</p>
+                <img src="https://assets.onecompiler.app/42uutqmvw/42uutpw3r/gravity.jpg" alt="Isaac Newton Gravity">
+            </li>
+            <li class="timeline-item">
+                <h3>18th Century</h3>
+                <p><strong>Electricity</strong> - Benjamin Franklin and others made foundational discoveries about electricity.</p>
+                <img src="https://assets.onecompiler.app/42uutqmvw/42uutpw3r/electricity.jpg" alt="Benjamin Franklin Electricity">
+            </li>
+            <li class="timeline-item">
+                <h3>1830</h3>
+                <p><strong>Darwins Finches</strong> -  Charles Darwin observed these finches during his voyage on the HMS Beagle in the 1830s.</p>
+                <img src="https://assets.onecompiler.app/42uutqmvw/42uutpw3r/drawin.jpg" alt="Louis Pasteur Germ Theory">
+            </li>
+            <li class="timeline-item">
+                <h3>1930</h3>
+                <p><strong>Geological Timescale </strong> - Holmes discovered First absolute geological timescale  .</p>
+                <img src="https://assets.onecompiler.app/42uutqmvw/42uutpw3r/timescale.jpg" alt=" geological Timescale">
+            </li>
+            <li class="timeline-item">
+                <h3>1953</h3>
+                <p><strong>DNA Structure </strong> - Watson, Crick, and Franklin discovered the double helix structure of DNA.</p>
+                <img src="https://assets.onecompiler.app/42uutqmvw/42uutpw3r/dna.jpg" alt="DNA Structure">
+            </li>
+        </ul>
+    </section>
+
+    <!-- Recent Discoveries Section -->
+    <section id="recent">
+        <h2><i class="fas fa-microscope"></i> Recent Discoveries (21st Century)</h2>
+        <img src="https://assets.onecompiler.app/42uutqmvw/42uutpw3r/recent.avif" alt="Black Hole First Image" width="100" height="100">
+        
+        <ul class="timeline">
+            <li class="timeline-item">
+                <h3>2012</h3>
+                <p><strong>Higgs Boson</strong> - Discovered at CERN, explaining why particles have mass.</p>
+                <img src="https://assets.onecompiler.app/42uutqmvw/42uutpw3r/higgs.jpg" alt="Higgs Boson">
+            </li>
+            <li class="timeline-item">
+                <h3>2015</h3>
+                <p><strong>Gravitational Waves</strong> - Detected by LIGO, confirming Einstein's theory of relativity.</p>
+                <img src="https://assets.onecompiler.app/42uutqmvw/42uutpw3r/hndjdhka.jpg" alt="Gravitational Waves">
+            </li>
+            <li class="timeline-item">
+                <h3>2012</h3>
+                <p><strong>CRISPR Gene Editing</strong> - A tool to edit genes with unprecedented precision.</p>
+                <img src="https://assets.onecompiler.app/42uutqmvw/42uutpw3r/crispr.jpg" alt="CRISPR Gene Editing">
+            </li>
+            <li class="timeline-item">
+                <h3>2019</h3>
+                <p><strong>First Image of a Black Hole</strong> - Captured by the Event Horizon Telescope.</p>
+                <img src="https://assets.onecompiler.app/42uutqmvw/42uutpw3r/holes.jpg" alt="Black Hole Image">
+            </li>
+        </ul>
+    </section>
+
+    <footer>
+        
+    </footer>
+    <script>
+        // Fact of the Day JavaScript
+        const facts = [ 
+            "The sun is 400 times larger than the moon but 400 times farther away from the Earth, making them appear the same size in the sky.",
+            "Jellyfish are 95% water, and they have been around for more than 500 million years, predating dinosaurs.",
+            "There are more stars in the universe than grains of sand on all the Earth's beaches combined.",
+            "Sharks have been around longer than trees, having existed more than 400 million years ago.",
+            "Honey never spoils; archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still edible.",
+            "A day on Venus is longer than a year on Venus due to its slow rotation and quick orbit around the sun.",
+            "Octopuses have three hearts, and their blood is blue due to the copper-based molecule hemocyanin.",
+            "A single teaspoon of a neutron star would weigh about 6 billion tons.",
+            "The Eiffel Tower can be 15 cm taller during the summer due to thermal expansion of the metal.",
+            "If you could travel at the speed of light, it would take you over 4 years to reach the closest star to Earth outside of our solar system."
+        ];
+
+        const factOfTheDay = document.getElementById('fact-of-the-day');
+        const randomFact = facts[Math.floor(Math.random() * facts.length)];
+        factOfTheDay.textContent = randomFact;
+    </script>
+</body>
+</html>
